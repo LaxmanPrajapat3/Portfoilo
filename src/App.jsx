@@ -60,7 +60,7 @@ export default function App() {
       {/* --- Footer --- */}
       <footer className="bg-gray-900 border-t border-gray-800">
         <div className="container mx-auto px-6 py-8 text-center text-gray-500">
-          <p>&copy; {new Date().getFullYear()} Your Name. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Laxman Prajapat . All Rights Reserved.</p>
           <div className="flex justify-center space-x-6 mt-4">
             <a href="#" className="hover:text-blue-400 transition-colors"><Github size={24} /></a>
             <a href="#" className="hover:text-blue-400 transition-colors"><Linkedin size={24} /></a>
@@ -106,7 +106,7 @@ const AnimatedSection = ({ children, id }) => {
 // --- Hero Section ---
 const HeroSection = () => {
   const [text, setText] = useState('');
-  const fullText = "A Creative Frontend Developer.";
+  const fullText = "A Creative Full Stack Developer.";
   
   useEffect(() => {
     let i = 0;
@@ -130,7 +130,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8 }}
           className="text-4xl md:text-7xl font-extrabold text-white leading-tight mb-4"
         >
-          Hi, I'm Your Name
+          Hi, I'm Laxman Prajapat
         </motion.h2>
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
