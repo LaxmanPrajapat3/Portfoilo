@@ -182,10 +182,10 @@ const AboutSection = () => (
       </motion.div>
       <div className="text-center md:text-left text-lg text-gray-300 space-y-6">
         <p>
-          I'm a passionate and results-driven frontend developer with a knack for creating dynamic, engaging, and user-friendly web experiences. With a strong foundation in modern web technologies, I specialize in bringing ideas to life with clean, efficient, and scalable code.
+         I am a Bachelor of Computer Applications (BCA) student with a strong foundation in full-stack web development, utilizing React.js, Node.js, Express, and databases like MongoDB and MySQL. I have worked on projects such as StockUpNa, a stock learning and demo investment platform, and Homyway, a rental platform inspired by Airbnb, where I contributed to building scalable and user-friendly solutions.
         </p>
         <p>
-          My journey in web development started with a simple "Hello, World!" and has since grown into a full-fledged passion for building beautiful and functional applications. I thrive on challenges and am constantly learning to stay at the forefront of the ever-evolving tech landscape.
+      Alongside my technical expertise, I have taken on leadership roles in hackathons and team projects, which have strengthened my collaboration, problem-solving, and communication skills. Driven by a passion for technology and continuous learning, I am committed to contributing to innovative projects that create real-world impact and push the boundaries of modern software development.
         </p>
       </div>
     </div>
@@ -257,7 +257,7 @@ const ProjectsSection = () => {
       `}</style>
       
       <h2 className="text-4xl font-bold text-center mb-12 text-white">My Projects</h2>
-      <div className="grid md:grid-cols-2 gap-10">
+      <div className="grid md:grid-cols-2 gap-10 pr-40 pl-40">
         {projects.map((project, index) => (
           <motion.div
             key={index}
