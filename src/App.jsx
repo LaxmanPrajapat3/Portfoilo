@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useAnimation, useInView } from 'framer-motion';
 import { Mail, Linkedin, Github, ArrowRight, Menu, X } from 'lucide-react';
-
+import laxman from "./assets/laxman.jpeg";
 // --- Main App Component ---
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -174,7 +174,7 @@ const AboutSection = () => (
         <div className="relative w-full h-full">
           <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full animate-pulse"></div>
           <img 
-            src="" 
+            src={laxman} 
             alt="Your Name" 
             className="relative w-full h-full object-cover rounded-full border-4 border-gray-800"
           />
