@@ -180,7 +180,7 @@ const AboutSection = () => (
         <div className="relative w-full h-full">
           <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full animate-pulse"></div>
           <img 
-            src="https://placehold.co/300x300/1e293b/ffffff?text=Laxman" 
+            src={laxman} 
             alt="Laxman Prajapat" 
             className="relative w-full h-full object-cover rounded-full border-4 border-gray-800"
           />
@@ -203,7 +203,7 @@ const AboutSection = () => (
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <a 
-            href="/resume.pdf" 
+            href="resuma.pdf" 
             download
             className="bg-transparent border-2 border-blue-500 text-blue-400 font-bold py-3 px-8 rounded-full text-lg hover:bg-blue-500 hover:text-white transition-all duration-300 transform hover:scale-105 inline-flex items-center"
           >
@@ -285,8 +285,7 @@ const ProjectsSection = () => {
   const projects = [
     { title: 'StockUpna', description: 'StockUpNa is a learning platform that helps beginners practice stock market investing through a demo account and interactive chatbot guidance', image: 'https://placehold.co/600x400/1e293b/93c5fd?text=StockUpNa', link: 'https://stockupna-056b.onrender.com' },
     { title: 'HomyWay', description: 'HomyWay is a platform that connects travelers with affordable, home-like stays, offering a seamless and comfortable booking experience', image: 'https://placehold.co/600x400/1e293b/93c5fd?text=HomyWay', link: 'https://homyway-jb6q.onrender.com/posts' },
-    { title: 'Project Three', description: 'A brief description of the project, its purpose, and the technologies used.', image: 'https://placehold.co/600x400/1e293b/93c5fd?text=Project+Three', link: '#' },
-    { title: 'Project Four', description: 'A brief description of the project, its purpose, and the technologies used.', image: 'https://placehold.co/600x400/1e293b/93c5fd?text=Project+Four', link: '#' },
+   
   ];
 
   const cardContentVariants = {
@@ -359,16 +358,19 @@ const ProjectsSection = () => {
 // --- Skills Section ---
 const SkillsSection = () => {
   const skills = [
+    { name: 'MongoDB', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg' },
+    { name: 'Express.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg' },
     { name: 'React', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg' },
+    { name: 'Node.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg' },
     { name: 'JavaScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg' },
     { name: 'TypeScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg' },
     { name: 'Tailwind CSS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg' },
-    { name: 'Node.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg' },
-    { name: 'Next.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg' },
+   
     { name: 'Figma', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg' },
     { name: 'Git', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg' },
-    { name: 'MongoDB', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg' },
     { name: 'MySQL', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg' },
+      { name: 'Java', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg' },
+        { name: 'DSA', logo: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2338bdf8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 2v4M12 10v4M8 6H4v4h4M16 6h4v4h-4M8 16H4v4h4M16 16h4v4h-4M12 6l-4 4M12 6l4 4M12 16l-4 4M12 16l4 4'/%3E%3C/svg%3E" },
   ];
   
   const containerVariants = {
@@ -447,15 +449,15 @@ const EducationSection = () => {
   const educationHistory = [
     {
       degree: 'Bachelor of Computer Applications',
-      institution: 'University of Technology',
-      years: '2022 - 2025',
+      institution: 'University of Rajasthan',
+      years: '2023 - 2026',
       description: 'Focused on core computer science subjects including data structures, algorithms, web development, and database management.'
     },
     {
       degree: 'Higher Secondary Education',
-      institution: 'Govt. Sr. Sec. School, Nawa',
-      years: '2020 - 2021',
-      description: 'Completed studies in the Science-Math stream with a focus on Physics, Chemistry, and Mathematics.'
+      institution: 'Bal Vikash School Didwana, Rajasthan', 
+      years: '2022 - 2023',
+     
     },
   ];
 
