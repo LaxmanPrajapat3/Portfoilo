@@ -22,7 +22,14 @@ export default function App() {
       {/* --- Navigation --- */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-gray-900/80 backdrop-blur-sm">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-white tracking-wider">Portfolio</h1>
+          {/* <h1 className="text-2xl font-bold text-white tracking-wider">Portfolio</h1> */}
+          <img 
+  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='grad1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%233b82f6;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%238b5cf6;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M30 20 L10 50 L30 80' fill='none' stroke='%239ca3af' stroke-width='5'/%3E%3Cpath d='M70 20 L90 50 L70 80' fill='none' stroke='%239ca3af' stroke-width='5'/%3E%3Ctext x='50' y='62' font-family='-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif' font-size='38' font-weight='bold' text-anchor='middle' fill='url(%23grad1)'%3ELP%3C/text%3E%3C/svg%3E" 
+  alt="Laxman Prajapat Logo" 
+  className="h-10 w-auto" // Adjust size as needed
+/>
+
+   
           <nav className="hidden md:flex space-x-8">
             {sections.map(section => (
               <button key={section} onClick={() => scrollToSection(section)} className="capitalize text-lg font-medium text-gray-300 hover:text-blue-400 transition-colors duration-300">
