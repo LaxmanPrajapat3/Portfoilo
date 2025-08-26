@@ -511,31 +511,8 @@ const ContactSection = () => (
     <p className="text-lg text-gray-400 text-center mb-12 max-w-2xl mx-auto">
       I'm currently open to new opportunities and collaborations. Feel free to reach out!
     </p>
-    <div className="max-w-2xl mx-auto">
-      <form className="space-y-6">
-        <div>
-          <label htmlFor="name" className="sr-only">Name</label>
-          <input type="text" id="name" placeholder="Your Name" className="w-full bg-gray-800 border-2 border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:border-blue-500 transition-colors" />
-        </div>
-        <div>
-          <label htmlFor="email" className="sr-only">Email</label>
-          <input type="email" id="email" placeholder="Your Email" className="w-full bg-gray-800 border-2 border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:border-blue-500 transition-colors" />
-        </div>
-        <div>
-          <label htmlFor="message" className="sr-only">Message</label>
-          <textarea id="message" placeholder="Your Message" rows="5" className="w-full bg-gray-800 border-2 border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:border-blue-500 transition-colors"></textarea>
-        </div>
-        <div className="text-center">
-          <motion.button 
-            type="submit"
-            className="bg-blue-600 text-white font-bold py-3 px-10 rounded-full text-lg hover:bg-blue-700 transition-all duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Send Message
-          </motion.button>
-        </div>
-      </form>
-    </div>
+   <p className="text-center">+91-8619937607</p>
+   <h2 className="text-center">
+    <u>theprogrammer452023@gmail.com</u></h2>    
   </AnimatedSection>
 );
