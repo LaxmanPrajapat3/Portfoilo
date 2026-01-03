@@ -2,7 +2,7 @@
 
 
 import laxman from "./assets/laxman.jpeg";
-import MainLogo from "./assets/MainLogo.png";
+
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useAnimation, useInView, useMotionValue, useTransform } from 'framer-motion';
 import { Mail, Linkedin, Github, ArrowRight, Menu, X, Download } from 'lucide-react';
@@ -123,7 +123,8 @@ const AnimatedSection = ({ children, id }) => {
 // --- Hero Section ---
 const HeroSection = () => {
   const [text, setText] = useState('');
-  const fullText = "A Creative Full Stack Developer.";
+  const fullText = "A Creative AI & ML Developer.";
+
   
   useEffect(() => {
     let i = 0;
@@ -228,6 +229,8 @@ const AboutSection = () => (
 
 // --- Project Card Component ---
 const ProjectCard = ({ project }) => {
+  const touchPos = useRef({ x: 0, y: 0 });
+
   const cardRef = useRef(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -237,15 +240,34 @@ const ProjectCard = ({ project }) => {
 
   const handleMouseMove = (e) => {
     if (!cardRef.current) return;
+    if (window.innerWidth >= 768) { 
     const rect = cardRef.current.getBoundingClientRect();
     x.set(e.clientX - rect.left - rect.width / 2);
     y.set(e.clientY - rect.top - rect.height / 2);
+        }
+
   };
 
   const handleMouseLeave = () => {
     x.set(0);
     y.set(0);
   };
+  const handleTouchStart = (e) => {
+  const t = e.touches[0];
+  touchPos.current = { x: t.clientX, y: t.clientY };
+};
+   
+const handleTouchMove = (e) => {
+  if (!cardRef.current) return;
+  const t = e.touches[0];
+  const dx = Math.abs(t.clientX - touchPos.current.x);
+  const dy = Math.abs(t.clientY - touchPos.current.y);
+  if (dx < 6 && dy < 6) return; // ignore tiny jitters (tap)
+  const rect = cardRef.current.getBoundingClientRect();
+  x.set(t.clientX - rect.left - rect.width / 2);
+  y.set(t.clientY - rect.top - rect.height / 2);
+};
+
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -261,14 +283,23 @@ const ProjectCard = ({ project }) => {
         rotateX,
         rotateY,
       }}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
+   onMouseMove={handleMouseMove}
+  onMouseLeave={handleMouseLeave}
+  onTouchStart={handleTouchStart}
+  onTouchMove={handleTouchMove}
+  onTouchEnd={handleMouseLeave}
+
+
+
+
+
+
       transition={{ type: "spring", stiffness: 150, damping: 20 }}
     >
       <motion.img 
         src={project.image} 
         alt={project.title} 
-        className="w-full h-64 object-cover" 
+        className="w-full h-64 object-cover pointer-events-none select-none" 
         variants={itemVariants}
         style={{
             translateX: useTransform(x, [-100, 100], [-10, 10]),
@@ -282,7 +313,9 @@ const ProjectCard = ({ project }) => {
         <motion.p className="text-gray-400 mb-4 flex-grow" variants={itemVariants}>
           {project.description}
         </motion.p>
-        <motion.a href={project.link} className="text-blue-400 font-semibold inline-flex items-center self-start group-hover:text-blue-300" variants={itemVariants}>
+        <motion.a href={project.link} 
+         onClick={(e) => e.stopPropagation()} 
+        className="text-blue-400 font-semibold inline-flex items-center self-start group-hover:text-blue-300" variants={itemVariants}>
           View Project <ArrowRight className="ml-2 transform group-hover:translate-x-1 transition-transform" />
         </motion.a>
       </div>
@@ -369,19 +402,50 @@ const ProjectsSection = () => {
 // --- Skills Section ---
 const SkillsSection = () => {
   const skills = [
+    { 
+  name: 'Python', 
+  logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg' 
+}
+,     { 
+  name: 'NumPy', 
+  logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg' 
+},{ 
+  name: 'Pandas', 
+  logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg' 
+}
+,{ 
+  name: 'Scikit-Learn', 
+  logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg' 
+}
+,{ 
+  name: 'TensorFlow', 
+  logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg' 
+}
+,{ 
+  name: 'PyTorch', 
+  logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg' 
+}, { name: 'MySQL', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg' }
+,
+
+
+
     { name: 'MongoDB', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg' },
-    { name: 'Express.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg' },
+ { name: 'JavaScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg' },
     { name: 'React', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg' },
+    { name: 'Express.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg' },
+    
     { name: 'Node.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg' },
-    { name: 'JavaScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg' },
-    { name: 'TypeScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg' },
+   
+  
     { name: 'Tailwind CSS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg' },
    
-    { name: 'Figma', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg' },
+ 
     { name: 'Git', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg' },
-    { name: 'MySQL', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg' },
+   
       { name: 'Java', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg' },
         { name: 'DSA', logo: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2338bdf8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 2v4M12 10v4M8 6H4v4h4M16 6h4v4h-4M8 16H4v4h4M16 16h4v4h-4M12 6l-4 4M12 6l4 4M12 16l-4 4M12 16l4 4'/%3E%3C/svg%3E" },
+   
+
   ];
   
   const containerVariants = {
