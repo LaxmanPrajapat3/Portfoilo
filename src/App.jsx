@@ -215,7 +215,7 @@ const AboutSection = () => (
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <a 
-            href="resuma.pdf" 
+            href="Laxman_Resume.pdf" 
             download
             className="bg-transparent border-2 border-blue-500 text-blue-400 font-bold py-3 px-8 rounded-full text-lg hover:bg-blue-500 hover:text-white transition-all duration-300 transform hover:scale-105 inline-flex items-center"
           >
